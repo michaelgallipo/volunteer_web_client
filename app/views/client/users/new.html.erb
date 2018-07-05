@@ -1,0 +1,38 @@
+<h2> New User Creation </h2>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/client/users", method: :post do %>
+  <div>
+    Name: <input type="text" name="full_name" value="<%=@user['full_name'] %>"/>
+  </div>   
+  <div>
+    User Name: <input type="text" name="user_name" value="<%=@user['user_name'] %>"/>
+  </div>   
+  <div>
+    Password: <input type="text" name="password" value="<%=@user['password'] %>"/>
+  </div>   
+  <div>
+    Address: <input type="text" name="address" value="<%=@user['address'] %>"/>
+  </div>   
+  <div>
+    Email: <input type="text" name="email" value="<%=@user['email'] %>"/>
+  </div>   
+  <div>
+    Phone: <input type="text" name="phone" value="<%=@user['phone'] %>"/>
+  </div> 
+  <div>
+    Bio: <textarea name="bio" id="bio" cols="50" rows="10" value="<%=@user['bio']%>"></textarea>
+  </div> 
+    <div>
+    Skills: <input type="text" name="skills" value="<%=@user['skills'] %>"/>
+  </div> 
+  <br>
+  <input type="submit" name="" value="Create User Account" />
+  <% end %>

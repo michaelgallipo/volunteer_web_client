@@ -1,0 +1,14 @@
+<h2><%= @user['full_name'] %></h2>
+<b><%= @user['address'] %><br>
+  <%= @user['email'] %><br>
+  <%= @user['phone'] %><br>
+  Visibility: <%= @user['visibility'] %><br>
+  Bio: <%= @user['bio'] %><br>
+  Skills: <%= @user['skills'] %>
+  <br><br>
+  Organizations Associated With: <br>
+  <% @user['membership']['member_of'].each do |org| %>
+  <%= org['name'] %><br>
+  <% end %>
+</b>
+
