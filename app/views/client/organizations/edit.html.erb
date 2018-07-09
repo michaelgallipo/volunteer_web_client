@@ -1,0 +1,48 @@
+<h2> Organization Update </h2>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/client/organizations/#{@organization['id']}", method: :patch do %>
+  <div>
+    Name: <input type="text" name="name" value="<%= @organization['name'] %>"/>
+  </div><br>  
+  <div>
+    Address: <input type="text" name="address" value="<%= @organization['address'] %>"/>
+  </div><br>  
+  <div>
+    Website Url: <input type="text" name="website" value="<%= @organization['website'] %>"/>
+  </div><br>  
+  <div>
+    Logo Url: <input type="text" name="logo" value="<%= @organization['logo'] %>"/>
+  </div><br>  
+  <div>
+    Contact Name: <input type="text" name="contact_name" value="<%= @organization['contact_name'] %>"/>
+  </div><br>  
+  <div>
+    Contact Email: <input type="text" name="contact_email" value="<%= @organization['contact_email'] %>"/>
+  </div><br>
+   <div>
+    Contact Phone: <input type="text" name="contact_phone" value="<%= @organization['contact_phone'] %>"/>
+  </div><br>
+   <div>
+    Mission: <br>
+    <textarea name="mission" id="mission"  cols="50" rows="6"> <%= @organization['mission'] %>"</textarea><br>
+  </div><br>
+  <div>
+    Description: <br>
+    <textarea name="description" id="description" cols="50" rows="10"> <%= @organization['description'] %>"</textarea>
+  </div><br>
+  <div>
+    Category Id: <input type="text" name="category_id" value="<%= @organization['category_id'] %>"/>
+  </div><br>
+  <div>
+    Needs: <input type="text" name="needs" value="<%= @organization['needs'] %>"/>
+  </div><br>
+  <input type="submit" name="" value="Update Organization" />
+  <% end %>

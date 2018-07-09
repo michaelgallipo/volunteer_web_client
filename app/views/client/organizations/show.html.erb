@@ -1,0 +1,16 @@
+  <h2><%= @organization["name"] %></h2>
+  <b><%= @organization["address"] %><br>
+    <%= @organization["website"] %><br>
+    <img src="<%= @organization["logo"] %>" style="width:200px;height:200px;"><br>
+    Contact Info:
+    <%= @organization["contact_name"] %><br>
+    <%= @organization["contact_email"] %><br>
+    <%= @organization["contact_phone"] %><br><br>
+  <%= @organization["category_id"] %><br>
+  Mission: <br>
+  <textarea name="mission" id="mission" cols="50" rows="6"> <%= @organization["mission"]%> </textarea><br>
+  Description: <br>
+  <textarea name="description" id="description" cols="50" rows="10"> <%= @organization["description"]%> </textarea><br>
+  Needs: <%= @organization["needs"] %> 
+  <br><br>
+  <a href="/client/organizations/<%= @organization['id']%>/edit">Edit Organization</a>

@@ -1,0 +1,16 @@
+<h1>Organization Index</h1>
+
+<% @organizations.each do |organization| %>
+
+  <h3><%= organization["name"] %></h3>
+  <b><%= organization["address"] %><br>
+    <%= organization["website"] %><br>
+    <img src="<%= organization["logo"] %>" style="width:200px;height:200px;"><br>
+  <%= organization["category_id"] %><br>
+  Mission: <br>
+  <textarea name="mission" id="mission" cols="50" rows="6"> <%= organization["mission"]%> </textarea><br>
+  Description: <br>
+  <textarea name="description" id="description" cols="50" rows="10"> <%= organization["description"]%> </textarea><br>
+  Needs: <%= organization["needs"] %> 
+  <br><br>
+  <% end %>

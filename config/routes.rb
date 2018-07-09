@@ -7,6 +7,13 @@ Rails.application.routes.draw do
     get "users/:id" => "users#show"
     post "users" => "users#create"
 
+    get "organizations" => "organizations#index"
+    get "organizations/new" => "organizations#new"
+    post "organizations" => "organizations#create"
+    get "organizations/:id" => "organizations#show"
+    get "organizations/:id/edit" => "organizations#edit"
+    patch "organizations/:id" => "organizations#update"
+
   end
 
 end

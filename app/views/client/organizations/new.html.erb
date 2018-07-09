@@ -1,0 +1,48 @@
+<h2> New Organization Creation </h2>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag "/client/organizations", method: :post do %>
+  <div>
+    Name: <input type="text" name="name" />
+  </div><br>  
+  <div>
+    Address: <input type="text" name="address" />
+  </div><br>  
+  <div>
+    Website Url: <input type="text" name="website" />
+  </div><br>  
+  <div>
+    Logo Url: <input type="text" name="logo" />
+  </div><br>  
+  <div>
+    Contact Name: <input type="text" name="contact_name" />
+  </div><br>  
+  <div>
+    Contact Email: <input type="text" name="contact_email" />
+  </div><br>
+   <div>
+    Contact Phone: <input type="text" name="contact_email" />
+  </div><br>
+   <div>
+    Mission: <br>
+    <textarea name="mission" id="mission" cols="50" rows="6"> </textarea><br>
+  </div><br>
+  <div>
+    Description: <br>
+    <textarea name="description" id="description" cols="50" rows="10"> </textarea>
+  </div><br>
+  <div>
+    Category Id: <input type="text" name="category_id" />
+  </div><br>
+  <div>
+    Needs: <input type="text" name="needs" />
+  </div><br>
+  <input type="submit" name="" value="Add Organization" />
+  <% end %>
