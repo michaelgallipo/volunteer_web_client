@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     get "organizations/:id/edit" => "organizations#edit"
     patch "organizations/:id" => "organizations#update"
 
+    get "/login" => "sessions#new"
+    post "/login" => "sessions#create"
+    delete "/logout" => "sessions#destroy"
+
   end
 
 end

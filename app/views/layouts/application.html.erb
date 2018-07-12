@@ -9,7 +9,18 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+<% if @jwt %>
+  <h4>Currently logged in</h4>
+<% end %>
+
   <body>
+    <% flash.each do |name, message| %>
+      <p><%= message %></p>
+    <% end %>
+    
+  <a href="/client/login">Log In</a> &emsp;
+  <a href="/client/logout" data-method="delete">Log Out</a>
+
     <%= yield %>
   </body>
 </html>

@@ -13,10 +13,11 @@ class Client::UsersController < ApplicationController
       "full_name" => params[:full_name],
       "user_name" => params[:user_name],
       "password" => params[:password],
+      "password_confirmation" => params[:password_confirmation],
       "address" => params[:address],
       "email" => params[:email],
       "phone" => params[:phone],
-      "visibility" => params[:visibility],
+      "visibility" => true,
       "bio" => params[:bio],
       "skills" => params[:skills],
     }
@@ -29,15 +30,16 @@ class Client::UsersController < ApplicationController
       "full_name" => params[:full_name],
       "user_name" => params[:user_name],
       "password" => params[:password],
+      "password_confirmation" => params[:password_confirmation],
       "address" => params[:address],
       "email" => params[:email],
       "phone" => params[:phone],
-      "visibility" => params[:visibility],
+      "visibility" => true,
       "bio" => params[:bio],
       "skills" => params[:skills],
     }
     
-    response = Unirest.post("https://localhost:3000/api/users", parameters: @user) 
+    response = Unirest.post("http://localhost:3000/api/users", parameters: @user) 
 
     if response.code == 200
       flash[:message] = "User Account sucessfully created"
