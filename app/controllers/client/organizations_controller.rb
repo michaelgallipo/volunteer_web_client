@@ -65,15 +65,20 @@ class Client::OrganizationsController < ApplicationController
       "needs" => params[:needs]
     }
 
-    response = Unirest.patch("http://localhost:3000/api/organizations/#{params[:id]}")
+    response = Unirest.patch("http://localhost:3000/api/organizations/#{params[:id]}", parameters: @organization)
 
     if response.code == 200
       flash[:message] = "Organization successfully updated"
-      redirect_to "client/organizations/#{params[:id]}"
+      redirect_to "/client/organizations/#{params[:id]}"
     else @errors = response.body['errors']
       render "edit.html.erb"
     end
   end
 
+  def destroy
+    response = Unirest.delete("http://localhost:3000/api/organizations/#{params[:id]}")
+    flash[:message] = "Organization successfully deleted"
+    redirect_to "/client/organizations"
+  end
 
 end

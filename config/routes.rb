@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "organizations/:id" => "organizations#show"
     get "organizations/:id/edit" => "organizations#edit"
     patch "organizations/:id" => "organizations#update"
+    delete "organizations/:id" => "organizations#destroy"
 
     get "/login" => "sessions#new"
     post "/login" => "sessions#create"

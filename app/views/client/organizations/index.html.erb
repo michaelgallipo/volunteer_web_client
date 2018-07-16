@@ -2,7 +2,7 @@
 
 <% @organizations.each do |organization| %>
 
-  <h3><%= organization["name"] %></h3>
+  <h3><a href="/client/organizations/<%= organization["id"] %>"><%= organization["name"] %></a></h3>
   <b><%= organization["address"] %><br>
     <%= organization["website"] %><br>
     <img src="<%= organization["logo"] %>" style="width:200px;height:200px;"><br>

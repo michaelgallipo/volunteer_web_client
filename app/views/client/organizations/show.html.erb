@@ -13,4 +13,5 @@
   <textarea name="description" id="description" cols="50" rows="10"> <%= @organization["description"]%> </textarea><br>
   Needs: <%= @organization["needs"] %> 
   <br><br>
-  <a href="/client/organizations/<%= @organization['id']%>/edit">Edit Organization</a>
+  <a href="/client/organizations/<%= @organization['id']%>/edit">Edit Organization</a><br>  
+  <a href="/client/organizations/<%= @organization['id']%>" data-method="delete">Delete Organization</a>
